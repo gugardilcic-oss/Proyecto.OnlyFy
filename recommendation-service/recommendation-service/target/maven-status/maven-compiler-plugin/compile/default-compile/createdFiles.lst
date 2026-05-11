@@ -1,0 +1,8 @@
+com\onlyfy\recommendation_service\dto\RecommendationResponseDTO.class
+com\onlyfy\recommendation_service\dto\RecommendationRequestDTO.class
+com\onlyfy\recommendation_service\repository\RecommendationRepository.class
+com\onlyfy\recommendation_service\service\RecommendationService.class
+com\onlyfy\recommendation_service\exception\GlobalExceptionHandler.class
+com\onlyfy\recommendation_service\controller\RecommendationController.class
+com\onlyfy\recommendation_service\model\Recommendation.class
+com\onlyfy\recommendation_service\RecommendationServiceApplication.class
