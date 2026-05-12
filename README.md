@@ -1,78 +1,79 @@
 # 🎵 Proyecto OnlyFy
 
 ## 📌 Integrantes
-
 * Lukas Valdes
 * Gustavo Gardilcic
 
 ---
 
 ## 🧩 Descripción
-
-**OnlyFy** es una plataforma tipo Spotify basada en arquitectura de microservicios, que permite gestionar usuarios, música, listas de reproducción y pagos de suscripción.
-
-El sistema está diseñado para simular un entorno real, donde cada funcionalidad se implementa como un microservicio independiente que se comunica con otros servicios mediante APIs REST.
+**OnlyFy** es una plataforma tipo Spotify basada en arquitectura de microservicios, que permite gestionar usuarios, música, suscripciones y pagos. Cada funcionalidad es un microservicio independiente que se comunica con otros mediante APIs REST usando **OpenFeign**.
 
 ---
 
-## ⚙️ Funcionalidades implementadas
+## ⚙️ Microservicios implementados
 
-* CRUD de usuarios
-* CRUD de canciones y categorías musicales
-* Gestión de listas de reproducción
-* Sistema de suscripciones
-* Gestión de pagos
-* Sistema de notificaciones
-* Recomendaciones de contenido
-* Validaciones de datos
-* Persistencia en base de datos con JPA + Hibernate
-* Comunicación entre microservicios
+| Microservicio | Puerto | Base de datos |
+|---|---|---|
+| auth-service | 8081 | auth_db |
+| subscription-service | 8082 | subscription_db |
+| music-category-service | 8083 | music_category_db |
+| messaging-service | 8084 | messaging_db |
+| jam-service | 8085 | jam_db |
+| notification-service | 8086 | notification_db |
+| user-perfil | 8087 | profile_db |
+| recommendation-service | 8088 | recommendation_db |
+| search-service | 8089 | search_db |
+| payment-service | 8090 | payment_db |
+
+---
+
+## 📡 Comunicación entre microservicios
+
+| Consumidor | Proveedor | Endpoint consumido | Tecnología |
+|---|---|---|---|
+| recommendation-service | music-category-service | GET /api/v1/music-categories/{id} | OpenFeign |
+| search-service | music-category-service | GET /api/v1/music-categories/{id} | OpenFeign |
+
+**Regla de negocio:** Antes de crear una recomendación o búsqueda, el servicio consulta si la categoría musical existe y está activa. Si el music-category-service no responde, se devuelve un error controlado.
 
 ---
 
 ## 🏗️ Arquitectura
-
-El proyecto sigue una arquitectura de microservicios con Spring Boot, donde cada servicio incluye:
-
-* Controller
-* Service
-* Repository
-* Modelo de datos propio
+Cada microservicio incluye:
+* Controller → recibe solicitudes HTTP
+* Service → lógica de negocio
+* Repository → acceso a datos con JpaRepository
+* DTOs → transferencia de datos
+* GlobalExceptionHandler → manejo de errores
 * Base de datos independiente
 
 ---
 
 ## 🚀 Cómo ejecutar
-
 1. Clonar el repositorio desde GitHub
-2. Abrir el proyecto en Visual Studio Code o IntelliJ
-3. Configurar la base de datos en `application.properties`
-4. Ejecutar cada microservicio individualmente
-5. Probar endpoints usando Postman
+2. Abrir cada microservicio en VS Code o IntelliJ
+3. Crear las BDs en MySQL Workbench
+4. Configurar contraseña en cada `application.properties`
+5. Ejecutar cada microservicio individualmente
+6. Probar endpoints con Postman
 
 ---
 
 ## 🧪 Tecnologías utilizadas
-
-* Java 17
-* Spring Boot
-* Spring Data JPA
-* Hibernate
-* H2 / MySQL
+* Java 21
+* Spring Boot 4.0.6
+* Spring Data JPA + Hibernate
+* MySQL
+* OpenFeign
 * Maven
 * GitHub
 
 ---
 
-## 📡 Endpoints (ejemplo - pagos)
-
-* GET /pagos → listar pagos
-* POST /pagos → crear pago
-
----
-
 ## 📌 Estado del proyecto
-
-En desarrollo – implementación progresiva de microservicios y funcionalidades.
-
----
+✅ 10 microservicios implementados con persistencia real.
+✅ 3 microservicios con comunicación activa entre servicios via OpenFeign:
+- music-category-service (proveedor)
+- recommendation-service (consumidor)
+- search-service (consumidor)
