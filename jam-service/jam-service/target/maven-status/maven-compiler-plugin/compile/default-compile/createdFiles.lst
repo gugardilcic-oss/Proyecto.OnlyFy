@@ -1,0 +1,7 @@
+com\onlyfy\jam_service\JamServiceApplication.class
+com\onlyfy\jam_service\model\JamModel.class
+com\onlyfy\jam_service\controller\JamController.class
+JamServiceApplication.class
+com\onlyfy\jam_service\exception\GlobalExceptionHandler.class
+com\onlyfy\jam_service\repository\JamRepository.class
+com\onlyfy\jam_service\service\JamService.class
