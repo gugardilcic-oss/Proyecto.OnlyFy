@@ -1,0 +1,19 @@
+🚀 Guía de Despliegue y Verificación Final
+Paso 1: Detener y limpiar el entorno
+Abre la terminal en la carpeta raíz de tu proyecto (C:\Users\lukas\Downloads\fullstack) y apaga los contenedores anteriores ejecutando:
+
+PowerShell
+docker compose down
+Paso 2: Levantar el ecosistema limpio
+En la misma terminal raíz, reconstruye la red distribuyendo las configuraciones nuevas de inmediato:
+
+PowerShell
+docker compose up -d --force-recreate
+Paso 3: Monitoreo y Verificación
+
+Espera unos 30 segundos a que los servicios inicien internamente.
+
+Abre tu navegador web e ingresa al panel centralizado de Eureka:
+👉 http://localhost:8761
+
+Valida visualmente que en la tabla de instancias aparezcan los 4 servicios registrados con éxito en estado UP (API-GATEWAY, MUSIC-CATEGORY-SERVICE, RECOMMENDATION-SERVICE y SEARCH-SERVICE).
