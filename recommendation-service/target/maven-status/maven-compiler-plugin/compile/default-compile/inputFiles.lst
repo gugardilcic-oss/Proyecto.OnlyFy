@@ -1,0 +1,9 @@
+C:\Users\lukas\Downloads\fullstack\recommendation-service\src\main\java\com\onlyfy\recommendation_service\model\Recommendation.java
+C:\Users\lukas\Downloads\fullstack\recommendation-service\src\main\java\com\onlyfy\recommendation_service\RecommendationServiceApplication.java
+C:\Users\lukas\Downloads\fullstack\recommendation-service\src\main\java\com\onlyfy\recommendation_service\exception\GlobalExceptionHandler.java
+C:\Users\lukas\Downloads\fullstack\recommendation-service\src\main\java\com\onlyfy\recommendation_service\repository\RecommendationRepository.java
+C:\Users\lukas\Downloads\fullstack\recommendation-service\src\main\java\com\onlyfy\recommendation_service\dto\RecommendationRequestDTO.java
+C:\Users\lukas\Downloads\fullstack\recommendation-service\src\main\java\com\onlyfy\recommendation_service\dto\RecommendationResponseDTO.java
+C:\Users\lukas\Downloads\fullstack\recommendation-service\src\main\java\com\onlyfy\recommendation_service\controller\RecommendationController.java
+C:\Users\lukas\Downloads\fullstack\recommendation-service\src\main\java\com\onlyfy\recommendation_service\client\MusicCategoryClient.java
+C:\Users\lukas\Downloads\fullstack\recommendation-service\src\main\java\com\onlyfy\recommendation_service\service\RecommendationService.java
